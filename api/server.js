@@ -32,14 +32,19 @@ module.exports = class SantaServer {
       process.env.NODE_ENV === "staging"
     ) {
       // Serve any static files
-      const root = require("path").join(__dirname + "../client/build");
-      this.server.use(express.static(root));
+      this.server.use(express.static(path.join(__dirname + "../client/build")));
 
-      this.server.get("*", (req, res) => {
-        res.sendFile("index.html", { root });
+      // Handle React routing, return all requests to React app
+      this.server.get("*", function (req, res) {
+        res.sendFile(path.join(__dirname, "../client/build", "index.html"));
       });
 
+      // const root = require("path").join(__dirname + "../client/build");
+      // this.server.use(express.static(root));
 
+      // this.server.get("*", (req, res) => {
+      //   res.sendFile("index.html", { root });
+      // });
     }
 
     // this.server.use('/', createProxyMiddleware({
@@ -50,6 +55,7 @@ module.exports = class SantaServer {
   }
 
   async initDatabase() {
+    
     try {
       await mongoose.connect(process.env.SANTAS_UTL, {
         useNewUrlParser: true,
