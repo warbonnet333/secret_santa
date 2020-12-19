@@ -8,6 +8,7 @@ require("dotenv").config();
 module.exports = class SantaServer {
   constructor() {
     this.server = null;
+    this.port = process.env.PORT || 8585;
   }
 
   async start() {
@@ -30,7 +31,7 @@ module.exports = class SantaServer {
       process.env.NODE_ENV === "production" ||
       process.env.NODE_ENV === "staging"
     ) {
-      console.log('try')
+      console.log("try", path.join(__dirname + "../client/build"));
       // Serve any static files
       this.server.use(express.static(path.join(__dirname + "../client/build")));
 
@@ -65,8 +66,8 @@ module.exports = class SantaServer {
   }
 
   startListening() {
-    return this.server.listen(process.env.PORT || 8585, () => {
-      console.log("Database connection successful...", process.env.PORT);
+    return this.server.listen(this.port, () => {
+      console.log("Database connection successful...", this.port);
     });
   }
 };
