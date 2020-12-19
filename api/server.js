@@ -48,6 +48,7 @@ module.exports = class SantaServer {
   }
 
   async initDatabase() {
+    
     try {
       await mongoose.connect(process.env.SANTAS_UTL, {
         useNewUrlParser: true,
