@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build:app": "cd client && yarn build",
-    "start": "node server.js",
+    "start": "node index.js && npm run client",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
