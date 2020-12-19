@@ -33,9 +33,9 @@ module.exports = class SantaServer {
     ) {
       // Serve any static files
       const root = require("path").join(__dirname + "../client/build");
-      app.use(express.static(root));
+      this.server.use(express.static(root));
 
-      app.get("*", (req, res) => {
+      this.server.get("*", (req, res) => {
         res.sendFile("index.html", { root });
       });
 
