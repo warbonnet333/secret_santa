@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fcff549b.chunk.css",
+    "main.js": "/static/js/main.3f266a13.chunk.js",
+    "main.js.map": "/static/js/main.3f266a13.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ca38fab6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ca38fab6.js.map",
+    "static/js/2.f8207c30.chunk.js": "/static/js/2.f8207c30.chunk.js",
+    "static/js/2.f8207c30.chunk.js.map": "/static/js/2.f8207c30.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.fcff549b.chunk.css.map": "/static/css/main.fcff549b.chunk.css.map",
+    "static/js/2.f8207c30.chunk.js.LICENSE.txt": "/static/js/2.f8207c30.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/BlackberryJamPersonalUse-rXOB.8c11d68c.ttf",
+    "static/media/back_arr.0d732feb.svg": "/static/media/back_arr.0d732feb.svg",
+    "static/media/delete.273403de.svg": "/static/media/delete.273403de.svg",
+    "static/media/tenor.3ce692c7.gif": "/static/media/tenor.3ce692c7.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ca38fab6.js",
+    "static/js/2.f8207c30.chunk.js",
+    "static/css/main.fcff549b.chunk.css",
+    "static/js/main.3f266a13.chunk.js"
+  ]
+}
