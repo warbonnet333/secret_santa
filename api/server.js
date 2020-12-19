@@ -30,8 +30,9 @@ module.exports = class SantaServer {
       process.env.NODE_ENV === "production" ||
       process.env.NODE_ENV === "staging"
     ) {
+      console.log('try')
       // Serve any static files
-      this.server.use(express.static(path.join(__dirname, "../client/build")));
+      this.server.use(express.static(path.join(__dirname + "../client/build")));
 
       // Handle React routing, return all requests to React app
       this.server.get("*", function (req, res) {
