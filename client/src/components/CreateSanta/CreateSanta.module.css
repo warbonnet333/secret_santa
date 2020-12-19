@@ -1,0 +1,45 @@
+.create_form {
+  margin: 3vw 0 5vw;
+  padding: 5vw 3vw;
+  background-color: #47b39d;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  border-radius: 5vw;
+  color: #ffffff;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-bottom: 3vw;
+}
+
+input {
+  border: none;
+  border-radius: 3vw;
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  width: 100%;
+  padding: 3vw 2vw;
+  margin-bottom: 1vw;
+  outline: none;
+  margin-bottom: 6vw;
+}
+
+input::placeholder {
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  opacity: 0.7;
+}
+
+.submit_btn{
+  margin: 7vw 0 0;
+  background-color: #ef4648;
+  color: #ffffff;
+  padding: 5vw 0;
+  font-size: 5.5vw;
+}

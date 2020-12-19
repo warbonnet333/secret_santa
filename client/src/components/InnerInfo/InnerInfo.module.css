@@ -1,0 +1,40 @@
+.inner_info {
+  padding: 3vw;
+  background: #47b39d;
+  border-radius: 3vw;
+  padding: 5vw 3vw;
+}
+
+.info_title {
+  font-size: 10vw;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0 auto 5vw;
+}
+.info_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+  align-items: center;
+}
+
+.info_descr {
+  max-width: 50%;
+  padding-right: 2vw;
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 4vw;
+}
+
+.info_text {
+  color: #ffffff;
+  font-size: 5vw;
+}
+
+.dance {
+  width: 50vw;
+  height: auto;
+  display: block;
+  margin-left: 10vw;
+}

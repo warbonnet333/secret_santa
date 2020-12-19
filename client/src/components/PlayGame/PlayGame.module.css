@@ -1,0 +1,44 @@
+.playGame {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  background: #2ecc71;
+  color: #ffffff;
+  padding: 5vw 0;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  line-height: 1.5;
+  font-size: 5vw;
+  outline: none;
+  margin: 3vw auto 3vw;
+}
+
+.container {
+  width: 100%;
+  border-radius: 5vw;
+  background: #ef4648;
+  padding: 5vw 3vw;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-top: 3vw;
+}
+
+.email_form_input_descr {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3vw;
+}
+
+.email_form_small_input {
+  border: none;
+  border-radius: 3vw;
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  width: 100%;
+  padding: 3vw 2vw;
+  margin-bottom: 1vw;
+  outline: none;
+}

@@ -1,0 +1,11 @@
+.container {
+  padding: 3vw;
+}
+
+.ready_text {
+  font-size: 7vw;
+  color: black;
+  margin: 3vw 0 0;
+  opacity: 0.8;
+}
+
