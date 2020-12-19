@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/warbonnet333/node-HW/issues"
   },
-  "homepage": "https://secretisanta.herokuapp.com",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
