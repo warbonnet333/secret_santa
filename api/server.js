@@ -1,8 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path');
 const santasRouter = require("./santas/santas.router");
-const MongoClient = require("mongodb").MongoClient;
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 require("dotenv").config();
 
@@ -26,6 +25,10 @@ module.exports = class SantaServer {
   initMiddlewares() {
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: true }));
+    this.server.use(express.static(path.join(__dirname, "../client/build")));
+    this.server.get("*", function (req, res) {
+      res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+    });
     // this.server.use('/', createProxyMiddleware({
     //   target: 'http://localhost:8585',
     //   changeOrigin: true,
@@ -51,7 +54,7 @@ module.exports = class SantaServer {
   }
 
   startListening() {
-    console.log(process.env.NODE_ENV)
+    console.log(process.env.NODE_ENV);
     return this.server.listen(process.env.PORT, () => {
       console.log("Database connection successful...", process.env.PORT);
     });
