@@ -31,7 +31,7 @@ module.exports = class SantaServer {
       process.env.NODE_ENV === "production" ||
       process.env.NODE_ENV === "staging"
     ) {
-      console.log("try", path.join(__dirname + "../client/build"));
+      console.log("sometyhing", path.join(__dirname + "../client/build"));
       // Serve any static files
       this.server.use(express.static(path.join(__dirname + "../client/build")));
 
