@@ -26,18 +26,18 @@ module.exports = class SantaServer {
   initMiddlewares() {
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: true }));
+    this.server.use(express.static("public"));
 
     if (
       process.env.NODE_ENV === "production" ||
       process.env.NODE_ENV === "staging"
     ) {
-      console.log("sometyhing", path.join(__dirname + "../client/build"));
       // Serve any static files
-      this.server.use(express.static(path.join(__dirname + "../client/build")));
+      this.server.use(express.static("../client/build"));
 
       // Handle React routing, return all requests to React app
       this.server.get("*", function (req, res) {
-        res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+        res.sendFile("../client/build/index.html");
       });
     }
 
@@ -45,7 +45,6 @@ module.exports = class SantaServer {
     //   target: 'http://localhost:8585',
     //   changeOrigin: true,
     // }));
-    // this.server.use(express.static("public"));
   }
 
   async initDatabase() {
