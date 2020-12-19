@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require('path');
+const path = require("path");
 const santasRouter = require("./santas/santas.router");
 
 require("dotenv").config();
@@ -25,10 +25,18 @@ module.exports = class SantaServer {
   initMiddlewares() {
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: true }));
-    this.server.use(express.static(path.join(__dirname, "../client/build")));
-    this.server.get("*", function (req, res) {
-      res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-    });
+ 
+
+    if (process.env.NODE_ENV === "production") {
+      // Serve any static files
+      this.server.use(express.static(path.join(__dirname, "../client/build")));
+
+      // Handle React routing, return all requests to React app
+      this.server.get("*", function (req, res) {
+        res.sendFile(path.join(__dirname, "client/build", "index.html"));
+      });
+    }
+
     // this.server.use('/', createProxyMiddleware({
     //   target: 'http://localhost:8585',
     //   changeOrigin: true,
