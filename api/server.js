@@ -65,8 +65,7 @@ module.exports = class SantaServer {
   }
 
   startListening() {
-    console.log(process.env.NODE_ENV);
-    return this.server.listen(process.env.PORT, () => {
+    return this.server.listen(process.env.PORT || 8585, () => {
       console.log("Database connection successful...", process.env.PORT);
     });
   }
