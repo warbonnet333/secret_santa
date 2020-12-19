@@ -1,11 +1,5 @@
-const Joi = require("joi");
 const santaModel = require("./santas.model");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const sgMail = require("@sendgrid/mail");
-const uuid = require("uuid");
-const { resetHistory } = require("sinon");
-const nodemailer = require("nodemailer");
 
 class SantaController {
   constructor() {
