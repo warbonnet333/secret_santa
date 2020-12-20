@@ -20,6 +20,7 @@ module.exports = class SantaServer {
   }
 
   initServer() {
+    console.log(this.POR)
     this.server = express();
   }
 
