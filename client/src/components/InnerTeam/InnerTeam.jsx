@@ -28,7 +28,7 @@ export default class InnerTeam extends Component {
     try {
       const response = await axios.get(`/santas/${id}`)
 
-      console.log(response.data)
+      console.log(response)
       const { isPlayed, limit, name, players, _id, admin } = response.data.neededTeam
       this.setState({ isPlayed, limit, name, players, id: _id, admin })
 

@@ -30,7 +30,7 @@ export default class InnerTeam extends Component {
 
       const { teamWithLink } = response.data
 
-      console.log(teamWithLink)
+      console.log(response.data)
 
       if (!teamWithLink && teamWithLink.length === 0) {
         this.setState({ teamList: [], isEmpty: true })
