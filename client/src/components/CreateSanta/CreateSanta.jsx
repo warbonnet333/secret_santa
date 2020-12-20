@@ -55,7 +55,7 @@ class CreateSanta extends Component {
         <label htmlFor="santa_adminEmail">Ваша пошта</label>
         <input required onChange={this.onHandlerChande} value={adminEmail} type="text" name="adminEmail" id="santa_adminEmail" placeholder="Ваша пошта" />
         <div className={st.start_descr}>Тільки ви зможете розіграти Санту</div>
-        <input className={st.submit_btn} type="submit" value="Продовжити" />
+        <button className={st.submit_btn} type="submit">Продовжити</button>
       </form>
     )
   }
