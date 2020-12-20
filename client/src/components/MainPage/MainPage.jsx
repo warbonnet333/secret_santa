@@ -68,7 +68,7 @@ export default class InnerTeam extends Component {
             <input className={st.email_form_small_input} required id="email_input" type="email" placeholder="christmas@thief.ua" value={email} onChange={this.onHandlerChande} />
             <label htmlFor="email_input" className={st.email_form_input_label}>Бажано Gmail</label>
           </div>
-          <input className={st.find_bnt} type="submit" value="Знайти" />
+          <div className={st.find_bnt}>Знайти</div>
         </form>
 
 
