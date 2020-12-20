@@ -30,7 +30,9 @@ export default class InnerTeam extends Component {
 
       const { teamWithLink } = response.data
 
-      if (teamWithLink.length === 0) {
+      console.log(teamWithLink)
+
+      if (!teamWithLink && teamWithLink.length === 0) {
         this.setState({ teamList: [], isEmpty: true })
       } else {
         this.setState({ teamList: [...teamWithLink], isEmpty: false })
@@ -57,7 +59,7 @@ export default class InnerTeam extends Component {
       <div className={st.teams_list_wr}>
         {isEmpty && <div className={st.empty_warn}>Таких команд немає, спробуйте іншу пошту, або створіть свого Санту</div>}
         {showCreator && <CreateSanta />}
-        {teamList.length !== 0 && <TeamList array={teamList} adminEmail={email} />}
+        {teamList && <TeamList array={teamList} adminEmail={email} />}
 
         <form className={st.email_form} onSubmit={this.onFormSubmit}>
 
