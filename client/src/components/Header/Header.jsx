@@ -6,11 +6,9 @@ import back_arr from "../../images/back_arr.svg"
 class Header extends Component {
 
   componentDidMount() {
-    console.log(this.props)
   }
 
   componentDidUpdate() {
-    console.log(this.props)
   }
   render() {
     const { pathname } = this.props.location

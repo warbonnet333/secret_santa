@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
 import st from "./MainPage.module.css";
 import TeamList from '../TeamList/TeamList'
 import CreateSanta from '../CreateSanta/CreateSanta'
@@ -26,6 +25,7 @@ export default class InnerTeam extends Component {
     e.preventDefault()
     const { email } = this.state
     try {
+      console.log(email)
       const response = await axios.get(`/santas/teams/${email}`)
 
       const { teamWithLink } = response.data
@@ -61,14 +61,14 @@ export default class InnerTeam extends Component {
         {showCreator && <CreateSanta />}
         {teamList && <TeamList array={teamList} adminEmail={email} />}
 
-        <form className={st.email_form} onSubmit={this.onFormSubmit}>
+        <form className={st.email_form}>
 
           <div className={st.email_form_input}>
             <div className={st.email_form_input_descr}>Введіть Вашу пошту, щоб знайти своїх друзів</div>
             <input className={st.email_form_small_input} required id="email_input" type="email" placeholder="christmas@thief.ua" value={email} onChange={this.onHandlerChande} />
             <label htmlFor="email_input" className={st.email_form_input_label}>Бажано Gmail</label>
           </div>
-          <div className={st.find_bnt}>Знайти</div>
+          <div onClick={this.onFormSubmit} className={st.find_bnt}>Знайти</div>
         </form>
 
 

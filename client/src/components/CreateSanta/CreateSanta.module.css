@@ -42,4 +42,7 @@ input::placeholder {
   color: #ffffff;
   padding: 5vw 0;
   font-size: 5.5vw;
+  width: 100%;
+  border-radius: 3vw;
+  text-align: center;
 }

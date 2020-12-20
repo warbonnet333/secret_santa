@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import st from './AddPlayer.module.css'
 import { notifier } from '../../helpers/notify'
+import { withRouter } from "react-router";
 const axios = require('axios');
 
-export default class AddPlayer extends Component {
+class AddPlayer extends Component {
   state = {
     name: '',
-    email: ''
+    email: '',
+    text: 'Уху! Вас запросили зіграти в Таємного Сантуб приєднуйтесь і додавайте себе до списку учасників'
   }
 
   initialState = () => {
@@ -44,10 +46,10 @@ export default class AddPlayer extends Component {
   }
 
   render() {
-    const { name, email } = this.state;
+    const { name, email, text } = this.state;
     return (
-      <form className={st.email_form} onSubmit={this.onSubmitForm}>
-        <div className={st.email_form_input_descr}>Додайте друга самі або надішліть запрошення</div>
+      <form className={st.email_form} >
+        <div className={st.email_form_input_descr}>Додайте друга самі</div>
         <div className={st.email_form_input}>
           <label className={st.label} htmlFor="add_name">Ім'я</label>
           <input className={st.email_form_small_input} required id="add_name" type="text" name="name" placeholder="Грінч" value={name} onChange={this.onHandlerChande} />
@@ -56,11 +58,16 @@ export default class AddPlayer extends Component {
           <label className={st.label} htmlFor="add_name">Email</label>
           <input className={st.email_form_small_input} required id="add_email" type="email" name="email" placeholder="christmas@thief.ua" value={email} onChange={this.onHandlerChande} />
         </div>
-        <input className={st.find_bnt} type="submit" value="Додати" />
-      </form>
+        <div className={st.find_bnt} onClick={this.onSubmitForm}>Додати</div>
+        <div className={st.email_form_input_descr}>або надішліть запрошення в Telegram</div>
+        <a rel="noopener noreferrer" target="_blank" href={`https://t.me/share/url?url=${window.location.href}&text=${text}`} className={st.share_teleg}>Запросити</a>
+      </form >
     )
   }
 
 }
+
+
+export default withRouter(AddPlayer)
 
 
