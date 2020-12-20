@@ -20,7 +20,6 @@ module.exports = class SantaServer {
   }
 
   initServer() {
-    console.log(this.POR)
     this.server = express();
   }
 
@@ -38,9 +37,9 @@ module.exports = class SantaServer {
       );
 
       // Handle React routing, return all requests to React app
-      this.server.get("*", function (req, res) {
-        res.sendFile(path.join(__dirname, "..", "client/build", "index.html"));
-      });
+      // this.server.get("*", function (req, res) {
+      //   res.sendFile(path.join(__dirname, "..", "client/build", "index.html"));
+      // });
 
       // const root = require("path").join(__dirname + "../client/build");
       // this.server.use(express.static(root));
