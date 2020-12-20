@@ -45,7 +45,7 @@ class CreateSanta extends Component {
   render() {
     const { name, limit, adminName, adminEmail } = this.state
     return (
-      <form onSubmit={this.onSubmitForm} className={st.create_form}>
+      <form  className={st.create_form}>
         <label htmlFor="santa_name">Назва команди</label>
         <input required onChange={this.onHandlerChande} value={name} type="text" name="name" id="santa_name" placeholder="Месники" />
         <label htmlFor="santa_limit">Грошовий ліміт подарунків</label>
@@ -55,7 +55,7 @@ class CreateSanta extends Component {
         <label htmlFor="santa_adminEmail">Ваша пошта</label>
         <input required onChange={this.onHandlerChande} value={adminEmail} type="text" name="adminEmail" id="santa_adminEmail" placeholder="Ваша пошта" />
         <div className={st.start_descr}>Тільки ви зможете розіграти Санту</div>
-        <div className={st.submit_btn}>Продовжити</div>
+        <div onClick={this.onSubmitForm} className={st.submit_btn}>Продовжити</div>
       </form>
     )
   }
