@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import st from "./MainPage.module.css";
 import TeamList from '../TeamList/TeamList'
 import CreateSanta from '../CreateSanta/CreateSanta'
+import getParameterByName from "../../helpers/getQuery"
 const axios = require('axios');
 
 export default class InnerTeam extends Component {
@@ -13,7 +14,10 @@ export default class InnerTeam extends Component {
   }
 
   componentDidMount() {
-
+    const teamId = getParameterByName("teamId")
+    if (teamId) {
+      this.props.history.push(`/inner/${teamId}`)
+    }
   }
 
   onHandlerChande = (e) => {

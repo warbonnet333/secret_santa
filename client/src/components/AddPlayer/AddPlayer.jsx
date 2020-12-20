@@ -8,7 +8,7 @@ class AddPlayer extends Component {
   state = {
     name: '',
     email: '',
-    text: 'Уху! Вас запросили зіграти в Таємного Сантуб приєднуйтесь і додавайте себе до списку учасників'
+    text: 'Уху! Вас запросили зіграти в Таємного Санту приєднуйтесь і додавайте себе до списку учасників'
   }
 
   initialState = () => {
@@ -47,6 +47,7 @@ class AddPlayer extends Component {
 
   render() {
     const { name, email, text } = this.state;
+    const { id } = this.props;
     return (
       <form className={st.email_form} >
         <div className={st.email_form_input_descr}>Додайте друга самі</div>
@@ -60,7 +61,7 @@ class AddPlayer extends Component {
         </div>
         <div className={st.find_bnt} onClick={this.onSubmitForm}>Додати</div>
         <div className={st.email_form_input_descr}>або надішліть запрошення в Telegram</div>
-        <a rel="noopener noreferrer" target="_blank" href={`https://t.me/share/url?url=${window.location.href}&text=${text}`} className={st.share_teleg}>Запросити</a>
+        <a rel="noopener noreferrer" target="_blank" href={`https://t.me/share/url?url=https://secretisanta.herokuapp.com/?teamId=${id}&text=${text}`} className={st.share_teleg}>Запросити</a>
       </form >
     )
   }
