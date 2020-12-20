@@ -50,9 +50,9 @@ class CreateSanta extends Component {
         <input required onChange={this.onHandlerChande} value={name} type="text" name="name" id="santa_name" placeholder="Месники" />
         <label htmlFor="santa_limit">Грошовий ліміт подарунків</label>
         <input required onChange={this.onHandlerChande} value={limit} type="text" name="limit" id="santa_limit" placeholder="200 000 песо" />
-        <label htmlFor="santa_adminName">Грошовий ліміт подарунків</label>
+        <label htmlFor="santa_adminName">Ваше ім'я</label>
         <input required onChange={this.onHandlerChande} value={adminName} type="text" name="adminName" id="santa_adminName" placeholder="Ваше ім'я" />
-        <label htmlFor="santa_adminEmail">Грошовий ліміт подарунків</label>
+        <label htmlFor="santa_adminEmail">Ваша пошта</label>
         <input required onChange={this.onHandlerChande} value={adminEmail} type="text" name="adminEmail" id="santa_adminEmail" placeholder="Ваша пошта" />
         <div className={st.start_descr}>Тільки ви зможете розіграти Санту</div>
         <input className={st.submit_btn} type="submit" value="Продовжити" />
