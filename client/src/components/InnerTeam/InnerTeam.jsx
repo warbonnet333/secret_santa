@@ -77,7 +77,7 @@ export default class InnerTeam extends Component {
     return (
       <div className={st.container}>
         <InnerInfo name={name} limit={limit} mount={players.length} />
-        {isPlayed && <FindName id={id} />}
+        {isPlayed && <FindName id={id} players={players} />}
         {!isPlayed && <div className={st.ready_text}>Вже готові зіграти:</div>}
         <PlayersList array={players} admin={admin} onDelete={this.onDelete} />
         {!isPlayed && <AddPlayer shoudUpdate={this.shoudUpdate} id={id} players={players} />}

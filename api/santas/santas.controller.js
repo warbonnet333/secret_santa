@@ -155,11 +155,9 @@ class SantaController {
 
       const happyName = santaName.prenestsTo;
 
-      return res
-        .status(200)
-        .json({
-          message: `${happyName} буде чекати від Вас подарунок. Гарних свят!`,
-        });
+      return res.status(200).json({
+        message: `${happyName} буде чекати від Вас подарунок. Гарних свят!`,
+      });
     } catch (error) {
       next(error);
     }
@@ -345,9 +343,8 @@ class SantaController {
   }
 
   async _getPlayerBeEmail(req, res, next) {
+    const { email } = req.params;
     try {
-      const { email } = req.params;
-
       const teamWithLink = await santaModel.find({ "players.email": email });
 
       return res.status(200).json({ teamWithLink, status: 1 });

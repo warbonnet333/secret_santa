@@ -16,8 +16,8 @@ header {
 
 .ask_btn {
   border: none;
-  background-color: #47b39d;
-  padding: 8px;
+  background-color: #ef4648;
+  padding: 0;
   position: absolute;
   top: 50%;
   right: 10px;
@@ -28,6 +28,12 @@ header {
   height: 10vw;
   border-radius: 50%;
   outline: none;
+}
+
+.ask_btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .back_link {

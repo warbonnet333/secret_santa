@@ -3,6 +3,7 @@ import st from "./MainPage.module.css";
 import TeamList from '../TeamList/TeamList'
 import CreateSanta from '../CreateSanta/CreateSanta'
 import getParameterByName from "../../helpers/getQuery"
+import { Link } from "react-router-dom"
 const axios = require('axios');
 
 export default class InnerTeam extends Component {
@@ -29,19 +30,14 @@ export default class InnerTeam extends Component {
     e.preventDefault()
     const { email } = this.state
     try {
-      console.log(email)
       const response = await axios.get(`/santas/teams/${email}`)
 
       const { teamWithLink } = response.data
-
-      console.log(response)
-
       if (teamWithLink.length === 0) {
         this.setState({ teamList: [], isEmpty: true })
       } else {
         this.setState({ teamList: [...teamWithLink], isEmpty: false })
       }
-
 
     } catch (error) {
       console.log(error)
@@ -54,9 +50,6 @@ export default class InnerTeam extends Component {
     this.setState({ showCreator: true })
   }
 
-  createGame = (e) => {
-    e.preventDefault()
-  }
   render() {
     const { email, teamList, isEmpty, showCreator } = this.state
     return (
@@ -78,7 +71,7 @@ export default class InnerTeam extends Component {
 
         <div className={st.footer}>
           <button onClick={this.showCreator} className={st.start_btn}>Створити Санту</button>
-        </div>
+                  </div>
       </div>
     )
   }

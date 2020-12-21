@@ -13,3 +13,14 @@ body {
   font-family: "Blackberry";
   src: url("./fonts/BlackberryJamPersonalUse-rXOB.ttf") format("ttf");
 }
+
+#mailLink {
+  margin: 6vw auto -2vw;
+  color: #ffffff;
+  opacity: 0.7;
+  font-size: 3.3vw;
+  line-height: 1.2;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import st from "./FindName.module.css"
 import { notifier } from '../../helpers/notify'
+import findMatch from '../../helpers/sliceEmail'
+const stringSimilarity = require("string-similarity");
 const axios = require('axios');
+
 
 export default class FindName extends Component {
   state = {
@@ -13,16 +16,27 @@ export default class FindName extends Component {
   }
 
   findName = async () => {
+    const { email } = this.state
+    const { id, players } = this.props
+
     try {
-      const { email } = this.state
-      const { id } = this.props
 
       const response = await axios.get(`/santas/find/${id}/${email}`)
       notifier(response.data.message)
 
     } catch (error) {
       console.log(error)
-      notifier('Щось пішло не так, перевірте дані та спробуйте ще раз')
+      const newArr = players.reduce(function (acc, item) {
+        acc.push(item.email)
+        return acc
+      }, [])
+
+      const { bestMatch } = stringSimilarity.findBestMatch(email, newArr)
+      if (bestMatch.rating > 0.91) {
+        notifier(`Щось пішло не так, найбільш схожий емейл - ${bestMatch.target}`)
+      } else {
+        notifier('Щось пішло не так, перевірте дані та спробуйте ще раз')
+      }
     }
   }
 

@@ -52,6 +52,7 @@
     "path": "^0.12.7",
     "postinstall": "^0.7.0",
     "react-router-dom": "^5.2.0",
+    "string-similarity": "^4.0.3",
     "uuid": "^7.0.3",
     "yargs": "^15.3.1"
   }
