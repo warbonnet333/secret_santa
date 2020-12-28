@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import st from "./App.module.css"
 import Header from "./components/Header/Header"

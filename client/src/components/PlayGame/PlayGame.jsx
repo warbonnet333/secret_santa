@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import st from "./PlayGame.module.css"
+import { notifier } from '../../helpers/notify'
 
 export default class PlayGame extends Component {
   state = {
@@ -18,7 +19,7 @@ export default class PlayGame extends Component {
       console.log('run')
       playSnata()
     } else {
-
+      notifier("Розіграти санту може тільки той, хто створив команду")
     }
   }
 
