@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import st from "./CreateSanta.module.css"
 import { withRouter } from "react-router";
 const axios = require('axios');
 
 const CreateSanta = (props) => {
-  // state = {
-  //   name: '',
-  //   limit: '',
-  //   adminName: '',
-  //   adminEmail: '',
-  // }
-
   const initialState = {
     name: '',
     limit: '',
@@ -20,17 +13,9 @@ const CreateSanta = (props) => {
 
   const [state, setState] = useState(initialState)
 
-  useEffect(() => {
-
-  })
-
   const onHandlerChande = e => {
     setState(prev => { return { ...prev, [e.target.name]: e.target.value } })
   }
-
-  // const onHandlerChande = (e) => {
-  //   this.setState({ [e.target.name]: e.target.value })
-  // }
 
   const onSubmitForm = async (e) => {
     e.preventDefault()
@@ -38,7 +23,6 @@ const CreateSanta = (props) => {
 
     const newTeam = { name, limit, admin: adminEmail }
 
-    console.log(newTeam)
     try {
       const response = await axios.post(`/santas`, newTeam)
 

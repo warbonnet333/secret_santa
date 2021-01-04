@@ -1,41 +1,37 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import st from "./PlayGame.module.css"
 import { notifier } from '../../helpers/notify'
 
-export default class PlayGame extends Component {
-  state = {
-    email: '',
-    openEmail: false
-  }
+const PlayGame = (props) => {
 
-  openEmail = () => {
-    this.setState({ openEmail: true })
-  }
+  const [openEmail, setOpenEmail] = useState(false);
+  const [email, setEmail] = useState('');
 
-  submitSanta = () => {
-    const stateEmail = this.state.email
-    const { admin, playSnata } = this.props
-    if (stateEmail === admin) {
-      console.log('run')
+  const openEmailFunc = () => {
+    setOpenEmail(true)
+  };
+
+  const submitSanta = () => {
+    const { admin, email, playSnata } = props
+    if (email === admin) {
       playSnata()
     } else {
       notifier("Розіграти санту може тільки той, хто створив команду")
     }
   }
 
-  onHandlerChande = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
+  const onHandlerChande = (e) => {
+    setEmail([e.target.value])
   }
 
-  render() {
-    const { email, openEmail } = this.state;
-    return <div className={st.container}>
-      {!openEmail && <button className={st.playGame} onClick={this.openEmail}>Розіграти Санту</button>}
-      {openEmail && <form className={st.container}>
-        <div className={st.email_form_input_descr}>Введіть Вашу пошту, розіграти Санту</div>
-        <input className={st.email_form_small_input} onChange={this.onHandlerChande} required id="email_play" name="email" type="email" placeholder="Ваша пошта" value={email} />
-      </form>}
-      {openEmail && <button className={st.playGame} onClick={this.submitSanta}>Продовжити</button>}
-    </div>
-  }
+  return <div className={st.container}>
+    {!openEmail && <button className={st.playGame} onClick={openEmailFunc}>Розіграти Санту</button>}
+    {openEmail && <form className={st.container}>
+      <div className={st.email_form_input_descr}>Введіть Вашу пошту, розіграти Санту</div>
+      <input className={st.email_form_small_input} onChange={(e) => onHandlerChande(e)} required id="email_play" name="email" type="email" placeholder="Ваша пошта" value={email} />
+    </form>}
+    {openEmail && <button className={st.playGame} onClick={submitSanta}>Продовжити</button>}
+  </div>
 }
+
+export default PlayGame

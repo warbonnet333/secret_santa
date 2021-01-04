@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PlayersList from '../PlayersList/PlayersList'
 import InnerInfo from '../InnerInfo/InnerInfo'
 import AddPlayer from '../AddPlayer/AddPlayer'
@@ -27,23 +27,18 @@ const InnerTeam = (props) => {
       setState((prev) => { return { ...prev, isPlayed, limit, name, players, id: _id, admin } })
 
     } catch (error) {
-      console.log(error)
       notifier('Щось пішло не так, перевірте дані та спробуйте ще раз')
     }
   }
 
+  const newId = props.match.params.id;
   useMemo(() => {
-    const { id } = props.match.params;
-    fetchTeam(id)
+    fetchTeam(newId)
   }, [state.id])
 
-
-
   const shoudUpdate = () => {
-    const { id } = props.match.params;
-    fetchTeam(id)
+    fetchTeam(newId)
   }
-
 
   const onDelete = async (idToDelete) => {
     const { id, isPlayed } = state
@@ -65,7 +60,6 @@ const InnerTeam = (props) => {
     const { id } = state
     try {
       const response = await axios.put(`/santas/playgame/${id}`)
-      console.log(response.data)
       notifier(response.data.message)
       setState(prev => { return { ...prev, isPlayed: true } })
     } catch (error) {
@@ -74,22 +68,18 @@ const InnerTeam = (props) => {
     }
   }
 
-  // render() {
   const { players, name, limit, admin, isPlayed } = state
-  const { id } = props.match.params;
   return (
     <div className={st.container}>
       <InnerInfo name={name} limit={limit} mount={players.length} />
-      {isPlayed && <FindName id={id} players={players} />}
+      {isPlayed && <FindName id={newId} players={players} />}
       {!isPlayed && <div className={st.ready_text}>Вже готові зіграти:</div>}
       <PlayersList array={players} admin={admin} onDelete={onDelete} />
-      {/* {!isPlayed && <AddPlayer shoudUpdate={props.shoudUpdate} id={id} players={players} />} */}
-      {!isPlayed && <AddPlayer shoudUpdate={shoudUpdate} id={id} players={players} />}
+      {!isPlayed && <AddPlayer shoudUpdate={shoudUpdate} id={newId} players={players} />}
 
       {players.length > 2 && !isPlayed && <PlayGame admin={admin} playSnata={playSnata} />}
     </div>
   )
-  // }
 }
 
 export default InnerTeam

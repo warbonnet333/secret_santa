@@ -1,31 +1,25 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import st from "./FindName.module.css"
 import { notifier } from '../../helpers/notify'
-import findMatch from '../../helpers/sliceEmail'
 const stringSimilarity = require("string-similarity");
 const axios = require('axios');
 
 
-export default class FindName extends Component {
-  state = {
-    email: '',
+const FindName = (props) => {
+  const [email, setEmail] = useState('');
+
+  const onHandlerChande = (e) => {
+    setEmail(e.target.value)
   }
 
-  onHandlerChande = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  findName = async () => {
-    const { email } = this.state
-    const { id, players } = this.props
+  const findName = async () => {
+    const { id, players } = props
 
     try {
-
       const response = await axios.get(`/santas/find/${id}/${email}`)
       notifier(response.data.message)
 
     } catch (error) {
-      console.log(error)
       const newArr = players.reduce(function (acc, item) {
         acc.push(item.email)
         return acc
@@ -40,11 +34,11 @@ export default class FindName extends Component {
     }
   }
 
-  render() {
-    return <div className={st.email_form}>
-      <div className={st.email_form_input_descr}>Санта вже розіграний і щоб дізнатись для кого готувати подарунок введіть свою пошту</div>
-      <input onChange={this.onHandlerChande} type="email" required name="email" className={st.email_form_small_input} placeholder="christmas@thief.ua" />
-      <button onClick={this.findName} className={st.find_bnt}>Дізнатись</button>
-    </div>
-  }
+  return <div className={st.email_form}>
+    <div className={st.email_form_input_descr}>Санта вже розіграний і щоб дізнатись для кого готувати подарунок введіть свою пошту</div>
+    <input onChange={onHandlerChande} type="email" required name="email" className={st.email_form_small_input} placeholder="christmas@thief.ua" />
+    <button onClick={findName} className={st.find_bnt}>Дізнатись</button>
+  </div>
 }
+
+export default FindName

@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import st from "./MainPage.module.css";
 import TeamList from '../TeamList/TeamList'
 import CreateSanta from '../CreateSanta/CreateSanta'
@@ -6,12 +6,6 @@ import getParameterByName from "../../helpers/getQuery"
 const axios = require('axios');
 
 const InnerTeam = () => {
-  // state = {
-  //   teamList: [],
-  //   email: '',
-  //   isEmpty: false,
-  //   showCreator: false
-  // }
 
   const [teamList, teamState] = useState([]);
   const [email, emailState] = useState('');
@@ -23,28 +17,14 @@ const InnerTeam = () => {
     if (teamId) {
       this.props.history.push(`/inner/${teamId}`)
     }
-    console.log('render')
-  })
-
-  // componentDidMount() {
-  //   const teamId = getParameterByName("teamId")
-  //   if (teamId) {
-  //     this.props.history.push(`/inner/${teamId}`)
-  //   }
-  // }
+  }, [])
 
   const onHandlerChande = (e) => {
-    // const email = e.target.value;
-    // this.setState({ email })
-
     emailState(e.target.value)
-
-    console.log(email)
   }
 
   const onFormSubmit = async (e) => {
     e.preventDefault()
-    // const { email } = this.state
     try {
       const response = await axios.get(`/santas/teams/${email}`)
 
@@ -52,11 +32,9 @@ const InnerTeam = () => {
       if (teamWithLink.length === 0) {
         teamState([])
         isEmptyState(true)
-        // this.setState({ teamList: [], isEmpty: true })
       } else {
         teamState([...teamWithLink])
         isEmptyState(false)
-        // this.setState({ teamList: [...teamWithLink], isEmpty: false })
       }
 
     } catch (error) {
@@ -64,16 +42,8 @@ const InnerTeam = () => {
     }
 
     emailState('')
-    // this.setState({ email: '' })
   }
 
-
-  // showCreator = () => {
-  //   this.setState({ showCreator: true })
-  // }
-
-  // render() {
-  // const { email, teamList, isEmpty, showCreator } = this.state
   return (
     <div className={st.teams_list_wr}>
       {isEmpty && <div className={st.empty_warn}>Таких команд немає, спробуйте іншу пошту, або створіть свого Санту</div>}
@@ -95,8 +65,6 @@ const InnerTeam = () => {
       </div>
     </div>
   )
-  // }
-
 }
 
 export default InnerTeam
