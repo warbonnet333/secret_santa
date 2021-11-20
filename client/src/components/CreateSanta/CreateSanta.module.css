@@ -1,48 +1,80 @@
 .create_form {
-  margin: 3vw 0 5vw;
-  padding: 5vw 3vw;
-  background-color: #47b39d;
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  border-radius: 5vw;
-  color: #ffffff;
+    margin: 3vw 0 5vw;
+    padding: 5vw 3vw;
+    background-color: #47b39d;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 5vw;
+    line-height: 1.2;
+    border-radius: 5vw;
+    color: #ffffff;
 }
 
 label {
-  display: block;
-  width: 100%;
-  margin-bottom: 3vw;
+    display: block;
+    width: 100%;
+    margin-bottom: 3vw;
 }
 
 input {
-  border: none;
-  border-radius: 3vw;
-  color: #000000;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  width: 100%;
-  padding: 3vw 2vw;
-  margin-bottom: 1vw;
-  outline: none;
-  margin-bottom: 6vw;
+    border: none;
+    border-radius: 3vw;
+    color: #000000;
+    font-size: 5vw;
+    line-height: 1.2;
+    width: 100%;
+    padding: 3vw 2vw;
+    outline: none;
+    margin-bottom: 6vw;
 }
 
 input::placeholder {
-  color: #000000;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  opacity: 0.7;
+    color: #000000;
+    font-size: 5vw;
+    line-height: 1.2;
+    opacity: 0.5;
 }
 
-.submit_btn{
-  margin: 7vw 0 0;
-  background-color: #ef4648;
-  color: #ffffff;
-  padding: 5vw 0;
-  font-size: 5.5vw;
-  width: 100%;
-  border-radius: 3vw;
-  text-align: center;
+.submit_btn {
+    margin: 7vw 0 0;
+    background-color: #ef4648;
+    color: #ffffff;
+    padding: 5vw 0;
+    font-size: 5.5vw;
+    width: 100%;
+    border-radius: 3vw;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+@media only screen and (min-width: 400px) {
+    .create_form {
+        margin: 12px 0 20px;
+        padding: 20px 12px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+
+    label {
+        margin-bottom: 12px;
+    }
+
+    input {
+        border-radius: 12px;
+        font-size: 20px;
+        padding: 12px 8px;
+        margin-bottom: 24px;
+    }
+
+    input::placeholder {
+        font-size: 20px;
+    }
+
+    .submit_btn {
+        margin: 28px 0 0;
+        padding: 20px 0;
+        font-size: 20px;
+        border-radius: 12px;
+    }
 }

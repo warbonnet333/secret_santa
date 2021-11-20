@@ -1,7 +1,6 @@
 header {
   display: flex;
   align-items: center;
-  background-color: #9bd7d1;
   background-color: #ef4648;
   padding: 4vw 3vw;
   justify-content: center;
@@ -10,7 +9,7 @@ header {
 
 .logo {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 6vw;
   text-decoration: none;
 }
 
@@ -28,6 +27,7 @@ header {
   height: 10vw;
   border-radius: 50%;
   outline: none;
+  cursor: pointer;
 }
 
 .ask_btn img {
@@ -50,4 +50,29 @@ header {
 .back_link img {
   width: 100%;
   height: 100%;
+}
+
+
+@media only screen and (min-width: 400px) {
+  header {
+    padding: 15px 12px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .ask_btn {
+    right: 10px;
+    font-size: 22px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .back_link {
+    left: 10px;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+  }
 }

@@ -39,7 +39,8 @@ const CreateSanta = (props) => {
     }
   }
 
-  return (<form className={st.create_form} >
+  return (
+  <form className={st.create_form} onSubmit={onSubmitForm}>
     <label htmlFor="santa_name">Назва команди</label>
     <input required onChange={onHandlerChande} value={state.name} type="text" name="name" id="santa_name" placeholder="Месники" />
     <label htmlFor="santa_limit">Грошовий ліміт подарунків</label>
@@ -49,8 +50,9 @@ const CreateSanta = (props) => {
     <label htmlFor="santa_adminEmail">Ваша пошта</label>
     <input required onChange={onHandlerChande} value={state.adminEmail} type="text" name="adminEmail" id="santa_adminEmail" placeholder="Ваша пошта" />
     <div className={st.start_descr}>Тільки ви зможете розіграти Санту</div>
-    <div onClick={onSubmitForm} className={st.submit_btn}>Продовжити</div>
-  </form >)
+    <button type='submit' className={st.submit_btn}>Продовжити</button>
+  </form >
+  )
 }
 
 export default withRouter(CreateSanta)

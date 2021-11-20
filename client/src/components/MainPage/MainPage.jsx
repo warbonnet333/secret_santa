@@ -48,7 +48,7 @@ const InnerTeam = () => {
     <div className={st.teams_list_wr}>
       {isEmpty && <div className={st.empty_warn}>Таких команд немає, спробуйте іншу пошту, або створіть свого Санту</div>}
       {showCreator && <CreateSanta />}
-      {teamList && <TeamList array={teamList} adminEmail={email} />}
+      {!!teamList.length && <TeamList array={teamList} adminEmail={email} />}
 
       <form className={st.email_form}>
         <div className={st.email_form_input}>

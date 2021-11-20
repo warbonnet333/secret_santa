@@ -8,7 +8,7 @@
   background: #ef4648;
   padding: 5vw 3vw;
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 5vw;
   line-height: 1.2;
 }
 
@@ -22,7 +22,7 @@
   border: none;
   border-radius: 3vw;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 5vw;
   line-height: 1.2;
   width: 100%;
   padding: 3vw 2vw;
@@ -32,15 +32,15 @@
 
 .email_form_small_input::placeholder {
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 5vw;
   line-height: 1.2;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .email_form_input_label {
-  font-size: 0.8rem;
+  font-size: 3.5vw;
   line-height: 1.2;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .email_form_input {
@@ -60,6 +60,7 @@
   line-height: 1.2;
   margin-top: 7vw;
   outline: none;
+  cursor: pointer;
 }
 
 .find_bnt{
@@ -71,4 +72,51 @@
   width: 100%;
   text-decoration: none;
   display: block;
+}
+
+@media only screen and (min-width: 400px){
+  .teams_list_wr {
+    padding: 12px 12px 132px 12px;
+  }
+
+  .email_form {
+    border-radius: 20px;
+    padding: 20px 12px;
+    font-size: 20px;
+  }
+
+  .email_form_input_descr {
+    margin-bottom: 12px;
+  }
+
+  .email_form_small_input {
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 12px 8px;
+    margin-bottom: 4px;
+  }
+
+  .email_form_small_input::placeholder {
+    font-size: 20px;
+  }
+
+  .email_form_input_label {
+    font-size: 14px;
+  }
+
+  .email_form_input {
+    margin-top: 8px;
+  }
+
+  .find_bnt,
+  .share_teleg {
+    border-radius: 12px;
+    padding: 20px 0;
+    font-size: 20px;
+    margin-top: 28px;
+  }
+
+  .find_bnt{
+    margin-bottom: 12px;
+  }
 }

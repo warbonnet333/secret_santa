@@ -1,5 +1,7 @@
 .container {
   padding: 3vw;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .ready_text {
@@ -7,5 +9,16 @@
   color: black;
   margin: 3vw 0 0;
   opacity: 0.8;
+}
+
+@media only screen and (min-width: 400px){
+  .container {
+    padding: 12px;
+  }
+
+  .ready_text {
+    font-size: 28px;
+    margin: 12px 0 0;
+  }
 }
 

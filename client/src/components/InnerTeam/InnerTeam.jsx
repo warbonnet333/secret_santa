@@ -34,11 +34,12 @@ const InnerTeam = (props) => {
   const newId = props.match.params.id;
   useMemo(() => {
     fetchTeam(newId)
-  }, [state.id])
+  }, [newId])
 
   const shoudUpdate = () => {
     fetchTeam(newId)
   }
+
 
   const onDelete = async (idToDelete) => {
     const { id, isPlayed } = state

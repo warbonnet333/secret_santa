@@ -4,7 +4,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -21,4 +20,16 @@
   line-height: 1.2;
   border-radius: 4vw;
   text-align: center;
+  flex-flow: column;
+  max-height: 80vh;
+  overflow: auto;
+  max-width: 600px;
+}
+
+@media only screen and (min-width: 400px){
+  .inner{
+    padding: 40px 20px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
 }

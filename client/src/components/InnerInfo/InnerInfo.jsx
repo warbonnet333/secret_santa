@@ -15,6 +15,6 @@ const InnerInfo = ({ name, limit, mount }) => <div className={st.inner_info}>
     <div className={st.info_descr}>Кількість гравців:</div>
     <div className={st.info_text}>{mount}</div>
   </div>
-  <img className={st.dance} src={dance} alt=""/>
+  <img className={st.dance} src={dance} alt="" width={200} height={250}/>
 </div>
 export default InnerInfo

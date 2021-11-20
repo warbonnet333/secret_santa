@@ -9,11 +9,11 @@ const AddPlayer = (props) => {
     name: '',
     email: '',
   }
-  const text = 'Уху! Вас запросили зіграти в Таємного Санту приєднуйтесь і додавайте себе до списку учасників'
+  const text = 'Уху! Вас запросили зіграти в Таємного Санту, приєднуйтесь і додавайте себе до списку учасників'
 
   const [state, setState] = useState(initialState)
 
-  const onHandlerChande = (e) => {
+  const onHandlerChange = (e) => {
     setState(prev => { return { ...prev, [e.target.name]: e.target.value } })
   }
 
@@ -45,17 +45,17 @@ const AddPlayer = (props) => {
   const { name, email } = state;
   const { id } = props;
   return (
-    <form className={st.email_form} >
+    <form className={st.email_form} onSubmit={onSubmitForm}>
       <div className={st.email_form_input_descr}>Додайте друга самі</div>
       <div className={st.email_form_input}>
         <label className={st.label} htmlFor="add_name">Ім'я</label>
-        <input className={st.email_form_small_input} required id="add_name" type="text" name="name" placeholder="Грінч" value={name} onChange={onHandlerChande} />
+        <input className={st.email_form_small_input} required id="add_name" type="text" name="name" placeholder="Грінч" value={name} onChange={onHandlerChange} />
       </div>
       <div className={st.email_form_input}>
         <label className={st.label} htmlFor="add_name">Email</label>
-        <input className={st.email_form_small_input} required id="add_email" type="email" name="email" placeholder="christmas@thief.ua" value={email} onChange={onHandlerChande} />
+        <input className={st.email_form_small_input} required id="add_email" type="email" name="email" placeholder="christmas@thief.ua" value={email} onChange={onHandlerChange} />
       </div>
-      <div className={st.find_bnt} onClick={onSubmitForm}>Додати</div>
+      <button type="submit" className={st.find_bnt} >Додати</button>
       <div className={st.email_form_input_descr}>або надішліть запрошення в Telegram</div>
       <a rel="noopener noreferrer" target="_blank" href={`https://t.me/share/url?url=https://secretisanta.herokuapp.com/?teamId=${id}&text=${text}`} className={st.share_teleg}>Запросити</a>
     </form >

@@ -14,9 +14,22 @@
   text-decoration: none;
   width: 100%;
   margin-bottom: 3vw;
-  font-size: 1.5rem;
+  font-size: 6vw;
   line-height: 1.2;
   border-radius: 3vw;
   color: #ffffff;
   display: block;
+}
+
+@media only screen and (min-width: 400px){
+  .team_list{
+    padding: 10px 0 25px;
+  }
+
+  .team_list_link{
+    padding: 25px 20px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    border-radius: 15px;
+  }
 }

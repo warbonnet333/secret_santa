@@ -8,13 +8,10 @@
   background-color: #ef4648;
   padding: 5vw 4vw;
   text-decoration: none;
-  width: 100%;
-  margin-bottom: 1vw;
-  font-size: 1.5rem;
+  font-size: 7vw;
   line-height: 1.2;
   border-radius: 3vw;
   color: #ffffff;
-  display: block;
   margin-bottom: 2vw;
   display: flex;
   align-items: center;
@@ -35,4 +32,23 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+@media only screen and (min-width: 400px) {
+  .team_list {
+    padding: 8px 0 20px;
+  }
+
+  .team_list li {
+    padding: 20px 16px;
+    font-size: 28px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+
+
+  .delete_btn {
+    width: 24px;
+    height: 24px;
+  }
 }
