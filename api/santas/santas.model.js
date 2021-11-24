@@ -9,7 +9,7 @@ const santaScheme = new Schema({
   limit: { type: String, required: true },
   admin: { type: String, required: true },
   isPlayed: { type: Boolean, required: false, default: false },
-  players: [{ name: String, email: String, prenestsTo: String, logo: String }],
+  players: [{ name: String, email: String, prenestsTo: String, logo: String, descr: String, helpers: String }],
 });
 
 // async function findContactByEmail(email) {

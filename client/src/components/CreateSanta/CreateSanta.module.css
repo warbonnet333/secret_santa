@@ -16,19 +16,26 @@ label {
     margin-bottom: 3vw;
 }
 
-input {
+input,
+textarea {
     border: none;
     border-radius: 3vw;
     color: #000000;
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 1.2;
     width: 100%;
     padding: 3vw 2vw;
     outline: none;
     margin-bottom: 6vw;
+    resize: none;
 }
 
-input::placeholder {
+textarea {
+    height: 150px;
+}
+
+input::placeholder,
+textarea::placeholder {
     color: #000000;
     font-size: 5vw;
     line-height: 1.2;
@@ -46,6 +53,7 @@ input::placeholder {
     text-align: center;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 400px) {
@@ -60,14 +68,16 @@ input::placeholder {
         margin-bottom: 12px;
     }
 
-    input {
+    input,
+    textarea {
         border-radius: 12px;
-        font-size: 20px;
+        font-size: 16px;
         padding: 12px 8px;
         margin-bottom: 24px;
     }
 
-    input::placeholder {
+    input::placeholder,
+    textarea::placeholder {
         font-size: 20px;
     }
 

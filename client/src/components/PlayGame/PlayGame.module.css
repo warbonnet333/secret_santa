@@ -12,6 +12,7 @@
   font-size: 5vw;
   outline: none;
   margin: 3vw auto 3vw;
+  cursor: pointer;
 }
 
 .container {
@@ -41,4 +42,31 @@
   padding: 3vw 2vw;
   margin-bottom: 1vw;
   outline: none;
+}
+
+@media only screen and (min-width: 400px) {
+  .playGame {
+    padding: 20px 0;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 12px auto 12px;
+  }
+
+  .container {
+    border-radius: 20px;
+    padding: 20px 12px;
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .email_form_input_descr {
+    margin-bottom: 12px;
+  }
+
+  .email_form_small_input {
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 12px 8px;
+    margin-bottom: 4px;
+  }
 }

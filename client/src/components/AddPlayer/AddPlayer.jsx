@@ -8,6 +8,7 @@ const AddPlayer = (props) => {
   const initialState = {
     name: '',
     email: '',
+    descr: '',
   }
   const text = 'Уху! Вас запросили зіграти в Таємного Санту, приєднуйтесь і додавайте себе до списку учасників'
 
@@ -19,7 +20,7 @@ const AddPlayer = (props) => {
 
   const onSubmitForm = async (e) => {
     e.preventDefault()
-    const { name, email } = state;
+    const { name, email, descr } = state;
     const { id, players } = props
 
     const sameName = players.find((item) => item.name.toLowerCase() === name.toLowerCase())
@@ -27,14 +28,14 @@ const AddPlayer = (props) => {
 
     if (sameName || sameEmail) {
       notifier('Гравець з таким іменем чи поштою вже є')
-      return
+      return;
     }
 
     try {
-      await axios.put(`/santas/${id}`, { name, email })
+      await axios.put(`/santas/${id}`, { name, email, descr });
       props.shoudUpdate()
-      notifier('Додано!', true)
-      setState(initialState)
+      notifier('Додано!', true);
+      setState(initialState);
 
     } catch (error) {
       console.log(error)
@@ -42,11 +43,11 @@ const AddPlayer = (props) => {
     }
   }
 
-  const { name, email } = state;
+  const { name, email, descr } = state;
   const { id } = props;
   return (
     <form className={st.email_form} onSubmit={onSubmitForm}>
-      <div className={st.email_form_input_descr}>Додайте друга самі</div>
+      <div className={st.email_form_input_descr}>Додайте нового гравця</div>
       <div className={st.email_form_input}>
         <label className={st.label} htmlFor="add_name">Ім'я</label>
         <input className={st.email_form_small_input} required id="add_name" type="text" name="name" placeholder="Грінч" value={name} onChange={onHandlerChange} />
@@ -54,6 +55,10 @@ const AddPlayer = (props) => {
       <div className={st.email_form_input}>
         <label className={st.label} htmlFor="add_name">Email</label>
         <input className={st.email_form_small_input} required id="add_email" type="email" name="email" placeholder="christmas@thief.ua" value={email} onChange={onHandlerChange} />
+      </div>
+      <div className={st.email_form_input}>
+        <label className={st.label} htmlFor="add_descr">Підказка для Санти</label>
+        <textarea className={st.email_form_small_input} required id="add_descr" name="descr" placeholder="На Новий Рік під ялинку хочу отримати ..." value={descr} onChange={onHandlerChange} />
       </div>
       <button type="submit" className={st.find_bnt} >Додати</button>
       <div className={st.email_form_input_descr}>або надішліть запрошення в Telegram</div>

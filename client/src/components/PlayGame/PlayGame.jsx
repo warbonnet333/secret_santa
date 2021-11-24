@@ -2,26 +2,28 @@ import React, { useState } from 'react'
 import st from "./PlayGame.module.css"
 import { notifier } from '../../helpers/notify'
 
-const PlayGame = (props) => {
+const PlayGame = ({ admin, playSnata }) => {
 
   const [openEmail, setOpenEmail] = useState(false);
   const [email, setEmail] = useState('');
 
   const openEmailFunc = () => {
+    console.log('openEmailFunc');
     setOpenEmail(true)
   };
 
   const submitSanta = () => {
-    const { admin, email, playSnata } = props
+    console.log(admin);
+    console.log(email);
     if (email === admin) {
       playSnata()
     } else {
-      notifier("Розіграти санту може тільки той, хто створив команду")
+      notifier("Розіграти санту може тільки той, хто створив команду", true)
     }
   }
 
   const onHandlerChande = (e) => {
-    setEmail([e.target.value])
+    setEmail(e.target.value);
   }
 
   return <div className={st.container}>

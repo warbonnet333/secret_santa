@@ -39,4 +39,32 @@
   line-height: 1.2;
   margin-top: 7vw;
   outline: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 400px) {
+  .email_form {
+    border-radius: 20px;
+    padding: 20px 12px;
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .email_form_input_descr {
+    margin-bottom: 12px;
+  }
+
+  .email_form_small_input {
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 12px 8px;
+    margin-bottom: 4px;
+  }
+
+  .find_bnt {
+    border-radius: 12px;
+    padding: 20px 0;
+    font-size: 20px;
+    margin-top: 28px;
+  }
 }
