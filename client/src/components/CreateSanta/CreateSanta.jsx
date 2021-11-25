@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import st from "./CreateSanta.module.css"
 import {withRouter} from "react-router";
 
@@ -20,6 +20,11 @@ const CreateSanta = (props) => {
             return {...prev, [e.target.name]: e.target.value}
         })
     };
+
+    useEffect(() => {
+        console.log('scrollToTop');
+        window.scrollTo(0, 0)
+    }, [])
 
     const onSubmitForm = async (e) => {
         e.preventDefault()
