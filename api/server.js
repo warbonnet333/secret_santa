@@ -36,6 +36,10 @@ module.exports = class SantaServer {
         express.static(path.join(__dirname, "..", "client/build"))
       );
 
+      this.server.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, '..', 'client/build', 'index.html'));
+      });
+
       // Handle React routing, return all requests to React app
       // this.server.get("*", function (req, res) {
       //   res.sendFile(path.join(__dirname, "..", "client/build", "index.html"));
