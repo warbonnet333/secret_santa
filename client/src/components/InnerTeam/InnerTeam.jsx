@@ -6,7 +6,6 @@ import PlayGame from '../PlayGame/PlayGame'
 import FindName from '../FindName/FindName'
 import st from './InnerTeam.module.css'
 import {notifier} from '../../helpers/notify'
-// import getParameterByName from "../../helpers/getQuery";
 
 const axios = require('axios');
 
@@ -21,16 +20,6 @@ const InnerTeam = (props) => {
     }
 
     const [state, setState] = useState(initialState)
-
-    // useEffect(() => {
-    //     const teamId = getParameterByName("teamId")
-    //     console.log('teamId', teamId);
-    //     console.log('props', props);
-    //     if (teamId) {
-    //         // console.log('props', props);
-    //         this.props.history.push(`/inner/${teamId}`)
-    //     }
-    // }, [])
 
     const fetchTeam = async (id) => {
         try {

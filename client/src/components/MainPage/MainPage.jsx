@@ -1,16 +1,25 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import st from "./MainPage.module.css";
 import TeamList from '../TeamList/TeamList'
 import CreateSanta from '../CreateSanta/CreateSanta'
+import getParameterByName from "../../helpers/getQuery";
 
 const axios = require('axios');
 
-const MainPage = () => {
+const MainPage = (props) => {
 
     const [teamList, teamState] = useState([]);
     const [email, emailState] = useState('');
     const [isEmpty, isEmptyState] = useState(false);
     const [showCreator, showCreatorState] = useState(false);
+
+    useEffect(() => {
+        const teamId = getParameterByName("teamId")
+        if (teamId) {
+            // console.log('props', props);
+            props.history.push(`/inner/${teamId}`)
+        }
+    }, [])
 
     const onHandlerChande = (e) => {
         emailState(e.target.value)
