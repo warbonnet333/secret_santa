@@ -45,6 +45,11 @@ const InnerTeam = () => {
         emailState('')
     }
 
+    const onNewSantaClick = () => {
+        showCreatorState(prev => !prev);
+        isEmptyState(false);
+    }
+
     return (
         <div className={st.teams_list_wr}>
             {isEmpty &&
@@ -64,7 +69,7 @@ const InnerTeam = () => {
 
 
             <div className={st.footer}>
-                <button onClick={() => showCreatorState(prev => !prev)} className={st.start_btn}>Створити Санту</button>
+                <button onClick={onNewSantaClick} className={st.start_btn}>Створити Санту</button>
             </div>
         </div>
     )
