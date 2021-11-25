@@ -16,8 +16,7 @@ const MainPage = (props) => {
     useEffect(() => {
         const teamId = getParameterByName("teamId")
         if (teamId) {
-            // console.log('props', props);
-            props.history.push(`/inner/${teamId}`)
+            props.history.push(`/team/${teamId}`)
         }
     }, [])
 

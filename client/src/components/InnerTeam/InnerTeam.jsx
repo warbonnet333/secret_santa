@@ -30,6 +30,7 @@ const InnerTeam = (props) => {
             })
 
         } catch (error) {
+            props.history.push('/')
             notifier('Щось пішло не так, перевірте дані та спробуйте ще раз')
         }
     }

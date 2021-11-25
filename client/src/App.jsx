@@ -16,7 +16,7 @@ const App = () =>
     {/* <Suspense fallback={<p>Loading...</p>}> */}
     <Switch>
       <Route path="/" exact component={MainPage} />
-      <Route path="/inner/:id" component={InnerTeam} />
+      <Route path="/team/:id" component={InnerTeam} />
       <Redirect to="/" />
     </Switch>
     {/* </Suspense> */}
