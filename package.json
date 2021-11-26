@@ -34,11 +34,13 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "@heroku/buildpack-registry": "^1.0.1",
     "@sendgrid/mail": "^7.2.1",
     "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "heroku": "^7.59.2",
     "http-proxy-middleware": "^1.0.6",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
