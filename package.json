@@ -34,6 +34,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "@heroku-cli/plugin-buildpacks": "^7.54.0",
+    "@heroku/buildpack-registry": "^1.0.1",
     "@sendgrid/mail": "^7.2.1",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
