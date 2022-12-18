@@ -8,7 +8,7 @@ require("dotenv").config();
 module.exports = class SantaServer {
   constructor() {
     this.server = null;
-    this.port = process.env.PORT || 8585;
+    this.port = process.env.PORT || 8686;
   }
 
   async start() {
