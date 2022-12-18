@@ -1,7 +1,7 @@
 {
   "root": "client/build/",
   "routes": {
-    "/**": "index.html"
+    "/**": "client/index.html"
   },
   "error_page": "client/build/index.html"
 }
